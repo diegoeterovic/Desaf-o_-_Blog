@@ -1,0 +1,24 @@
+<h1> Status Artículo </h1>
+
+
+
+<% if @post.errors.any? %> 
+    <div id="error_explanation">
+        <h2><%= pluralize(@post.errors.count, "error") %> No pudo ser guardado por los siguientes errores</h2>
+        <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+    </div>
+<% else %>
+  <h1> Artículo ingresado con èxito </h1>
+<% end %>
+<p>Presiona el botòn para volver</p>
+<form method="get" action="/posts/dashboard">
+    <button type="submit">Volver a publicar</button>
+</form>
+
+<form method="get" action="/posts/index">
+    <button type="submit">Ir al Main</button>
+</form>

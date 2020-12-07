@@ -1,0 +1,22 @@
+<h1>Bienvenido al Articuleitor, donde nada tiene sentido</h1>
+<form method="get" action="/posts/dashboard">
+    <button type="submit">Ir al admin</button>
+</form>
+
+<table class = "table">
+    <tr>
+        <th> Título </th>
+        <th> Imagen </th>
+        <th> Fecha publicación</th>
+        <th> Contenido</th>
+    </tr>
+    <% @posts.each do |post|  %>
+    <tr>
+        <td><%= post.title  %> </td>
+        <td><%= post.picture  %> </td>
+        <td><%= post.created_at  %> </td>
+        <td><%= post.content.gsub("spoiler","")  %> </td>
+    <% end  %>
+    </tr>
+
+</table>
